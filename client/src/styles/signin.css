@@ -1,0 +1,71 @@
+.signinmain {
+    background-color: #fff;
+    border-radius: 15px;
+
+    padding: 10px 20px;
+    
+    width: 400px;
+    text-align: center;
+    
+  }
+  
+  h1 {
+    color: #2196F3;
+  }
+  
+  label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #000000;
+    font-weight: bold;
+  }
+  input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 3px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .sigbutton {
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #2196F3;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .signinwrap {
+    display: flex;
+  }
+  
+  #signbody{display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background: #000000;
+    flex-direction: column;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  #sigp{
+    color: #2196F3;
+  }
+  #sigp{
+    color: #2196F3;
+    text-decoration: none;
+  }
+
+  #siga{
+    color: #2196F3;
+    text-decoration: none;
+  }

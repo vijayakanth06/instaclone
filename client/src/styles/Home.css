@@ -1,0 +1,299 @@
+.nav-bar{
+    position: fixed;
+    display: inline;
+    border-right: 1px solid rgb(78, 78, 78);
+    height: 710px;
+    width:250px;
+    background-color: black;
+    color: white;
+}
+.btn{
+  margin: 10px;
+  background-color: black;
+  color: white;
+  border: none; 
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dcgram-homepage {
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: black;
+}
+
+.stories-container {
+  display: flex;
+  overflow-x: scroll;
+  padding: 10px 0;
+  background-color: black;
+}
+
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.story-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid transparent;
+  background: linear-gradient(to right, orange, red, purple);
+  padding: 3px;
+}
+
+.story-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid black;
+}
+
+.story-username {
+  margin-top: 5px;
+  font-size: 10px;
+  color: white;
+}
+
+.post-container {
+  margin-bottom: 20px;
+  background-color: #121212;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.post-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.post-user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-options {
+  position: relative;
+  cursor: pointer;
+}
+
+.options-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.options-dropdown ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.options-dropdown li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.options-dropdown li:hover {
+  background-color: #333;
+}
+
+.post-media {
+  width: 100%;
+}
+
+.post-media img,
+.post-media video {
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-interactions {
+  padding: 10px;
+}
+
+.interaction-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.interaction-icons svg {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.post-details {
+  padding: 0 10px;
+}
+
+.post-likes {
+  font-weight: bold;
+}
+
+.post-caption {
+  color: #b0b0b0;
+}
+
+.post-hashtags {
+  color: #4a90e2;
+  margin: 5px 0;
+}
+
+.post-comment {
+  margin: 5px 0;
+}
+
+.comment-username {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comment-text {
+  color: #b0b0b0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.stories-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.stories-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/* CSS */
+
+  a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  }
+ 
+  button{
+  background-color: black;
+  padding:10px;
+  }
+  a:hover{
+      font-size: large;
+      font-weight: bold;
+  }
+  
+  /* Replace your existing CSS with this */
+.instagram-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.instagram-nav button {
+  background-color: black;
+  border: none;
+}
+
+.instagram-nav a:hover {
+  font-size: large;
+  font-weight: bold;
+}
+
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.mute-button {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.image-player {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.nav-bar {
+  width: 250px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #333;
+}
+
+.instagram-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-logo {
+  margin-bottom: 30px;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  padding: 10px 5px;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-item a,
+.nav-user {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  gap: 10px;
+}
+
+.nav-user.logout {
+  cursor: pointer;
+}
+
+.nav-item a:hover,
+.nav-user:hover {
+  color: #ccc;
+}

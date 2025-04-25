@@ -1,0 +1,75 @@
+#logbody{
+    padding: 100px 20px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background: #000000;
+    flex-direction: column;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.logininmain {
+    background-color: #000000;
+   padding: 0px 0px 0px 10px;
+    transition: transform 0.2s;
+    width: 390px;
+    height: 100px;
+   text-align: center; 
+  }
+  
+  #logh1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #2196F3;
+  }
+  
+  #loglabel {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  
+  input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .logbutton {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #2196F3;
+    width: 100%;
+    font-size: 16px;
+  }
+ 
+ .logininwrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3{
+    color: #ffffff;
+  }
+  #logp{
+    color: #ffffff;
+  }
+  #loga{
+    color: #ffffff;
+  }
