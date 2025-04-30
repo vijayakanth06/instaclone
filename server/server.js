@@ -13,12 +13,12 @@ app.post('/signup', async (req, res) => {
   const { username, email, password, mobno } = req.body;
   try {
     const userExists = await User.findOne({ username });
-    if (userExists)  res.status(400).json({ message: 'User already exists' });
+    if (userExists) res.status(400).json({ message: 'User already exists' });
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({ username, email, password: hashedPassword, mobno });
     await newUser.save();
     res.status(201).json({ message: 'User created successfully' });
-    
+
   } catch (error) {
     console.log(error);
   }
@@ -28,6 +28,7 @@ app.post('/signup', async (req, res) => {
 
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
+  console.log(req.body)
 
   const user = await User.findOne({ username });
   if (!user) return res.status(400).json({ message: 'Invalid username or password' });
@@ -43,6 +44,7 @@ app.post('/login', async (req, res) => {
 
 const authenticateToken = (req, res, next) => {
   const token = req.headers['authorization']?.split(' ')[1];
+  console.log(token)
   if (!token) return res.sendStatus(401);
 
   jwt.verify(token, 'your_jwt_secret', (err, user) => {
@@ -52,12 +54,24 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
+
+
+app.get('/profile', authenticateToken, async (req, res) => {
+  try {
+    const user =await  User.findOne({ username: req.user.username })
+    res.status(200).json({user});
+  } catch (error) {   
+    console.log("error at get profile", error);
+    res.status(500).json("Internal server error");
+  }
+})
 // Update profile information
-app.put('/profile', authenticateToken, async (req, res) => {
+app.put('/profile/update', authenticateToken, async (req, res) => {
+  console.log("profile")
   try {
     const { username, email, mobno, currentPassword } = req.body;
     const user = await User.findOne({ username: req.user.username });
-    
+
     if (!user) return res.status(404).json({ message: 'User not found' });
 
     // Verify current password
@@ -112,7 +126,7 @@ app.put('/profile/password', authenticateToken, async (req, res) => {
   try {
     const { currentPassword, newPassword } = req.body;
     const user = await User.findOne({ username: req.user.username });
-    
+
     if (!user) return res.status(404).json({ message: 'User not found' });
 
     // Verify current password

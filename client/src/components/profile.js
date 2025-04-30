@@ -23,13 +23,14 @@ const ProfilePage = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
+        console.log(token)
         const response = await axios.get('https://instaclone-8585.onrender.com/profile', {
-          headers: { Authorization: `Bearer ${token}` }
+          headers: { Authorization: `Bearer ${token}` } 
         });
         setUserData({
-          username: response.data.username,
-          email: response.data.email,
-          mobno: response.data.mobno
+          username: response.data.user.username,
+          email: response.data.user.email,
+          mobno: response.data.user.mobno  
         });
       } catch (err) {
         console.error(err);
@@ -61,7 +62,7 @@ const ProfilePage = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        'https://instaclone-8585.onrender.com/profile',
+        'https://instaclone-8585.onrender.com/profile/update',
         { ...userData, currentPassword: passwordData.currentPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -369,7 +369,7 @@ const DcgramHomepage = () => {
   ];
 
   return (
-      <div>
+      <div className='home-container'>
           <NavBar />
           <div className="dcgram-homepage">
               <div className="stories-container">
