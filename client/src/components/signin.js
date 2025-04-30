@@ -23,7 +23,7 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/signup', formData, {
+      const response = await axios.post('https://instaclone-8585.onrender.com/signup', formData, {
         headers: { 'Content-Type': 'application/json' }
       });
       console.log(response.data);

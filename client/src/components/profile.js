@@ -23,7 +23,7 @@ const ProfilePage = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/profile', {
+        const response = await axios.get('https://instaclone-8585.onrender.com/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUserData({
@@ -61,7 +61,7 @@ const ProfilePage = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        'http://localhost:5000/profile',
+        'https://instaclone-8585.onrender.com/profile',
         { ...userData, currentPassword: passwordData.currentPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -91,7 +91,7 @@ const ProfilePage = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        'http://localhost:5000/profile/password',
+        'https://instaclone-8585.onrender.com/profile/password',
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword

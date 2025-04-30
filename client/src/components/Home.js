@@ -115,8 +115,10 @@ const postData = [
 ];
 const NavBar = () => {
   const [username, setUsername] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
   useEffect(() => {
     const storedUsername = localStorage.getItem('username');
     if (storedUsername) setUsername(storedUsername);
@@ -129,63 +131,96 @@ const NavBar = () => {
     navigate('/login');
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Common navigation item component
+  const NavItem = ({ icon: Icon, label, onClick, to }) => {
+    if (to) {
+      return (
+        <a href={to} className="nav-link">
+          <Icon size={24} className="nav-icon" />
+          <span>{label}</span>
+        </a>
+      );
+    }
+    return (
+      <button className="nav-link" onClick={onClick}>
+        <Icon size={24} className="nav-icon" />
+        <span>{label}</span>
+      </button>
+    );
+  };
+
   return (
-    <div className="nav-bar">
-      <nav className="instagram-nav">
-        <div className="nav-logo">
-          <img src="./images/instagram-logo.png" width="150px" alt="Logo" />
-        </div>
+    <>
+      <button 
+        className={`mobile-menu-button ${isMobileMenuOpen ? 'open' : ''}`} 
+        onClick={toggleMobileMenu}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
+      
+      <div className={`nav-bar ${isMobileMenuOpen ? 'open' : ''}`}>
+        
+        <nav className="instagram-nav">
+          <div className="nav-logo">
+            <img src="./images/instagram-logo.png" width="150px" alt="Logo" />
+          </div>
 
-        <button className="nav-item">
-          <a href="/"><Home size={24} className="nav-icon" /><span>Home</span></a>
-        </button>
+          <div className="nav-item">
+            <NavItem icon={Home} label="Home" to="/" />
+          </div>
 
-        <button className="nav-item">
-          <a href="#"><Search size={24} className="nav-icon" /><span>Search</span></a>
-        </button>
+          <div className="nav-item">
+            <NavItem icon={Search} label="Search" onClick={() => {}} />
+          </div>
 
-        <button className="nav-item">
-          <a href="#"><Compass size={24} className="nav-icon" /><span>Explore</span></a>
-        </button>
+          <div className="nav-item">
+            <NavItem icon={Compass} label="Explore" onClick={() => {}} />
+          </div>
 
-        <button className="nav-item">
-          <a href="#"><Clapperboard size={24} className="nav-icon" /><span>Reels</span></a>
-        </button>
+          <div className="nav-item">
+            <NavItem icon={Clapperboard} label="Reels" onClick={() => {}} />
+          </div>
 
-        <button className="nav-item">
-          <a href="#"><MessageSquare size={24} className="nav-icon" /><span>Messages</span></a>
-        </button>
+          <div className="nav-item">
+            <NavItem icon={MessageSquare} label="Messages" onClick={() => {}} />
+          </div>
 
-        <button className="nav-item">
-          <a href="#"><Bell size={24} className="nav-icon" /><span>Notifications</span></a>
-        </button>
+          <div className="nav-item">
+            <NavItem icon={Bell} label="Notifications" onClick={() => {}} />
+          </div>
 
-        <button className="nav-item">
-          <a href="#"><PlusSquare size={24} className="nav-icon" /><span>Create</span></a>
-        </button>
-        <br /><br /><br /><br /><br /><br /><br /><br /><br />
-        <button className="nav-item">
-          {username ? (
-            <a href="/profile">
-            <User size={24} className="nav-icon" />
-            <span>{username}</span>
-          </a>
-          ) : (
-            <a href="/signup"><User size={24} className="nav-icon" /><span>Sign in</span></a>
-          )}
-        </button>
+          <div className="nav-item">
+            <NavItem icon={PlusSquare} label="Create" onClick={() => {}} />
+          </div>
 
-        <button className="nav-item">
-          {username ? (
-            <span onClick={handleLogout} className="nav-user logout">
-              <LogOut size={24} className="nav-icon" /><span>Logout</span>
-            </span>
-          ) : (
-            <a href="/login"><LogIn size={24} className="nav-icon" /><span>Login</span></a>
-          )}
-        </button>
-      </nav>
-    </div>
+          <div className="nav-spacer" />
+
+          <div className="nav-item">
+            {username ? (
+              <NavItem icon={User} label={username} to="/profile" />
+            ) : (
+              <NavItem icon={User} label="Sign in" to="/signup" />
+            )}
+          </div>
+
+          <div className="nav-item">
+            {username ? (
+              <button className="nav-link" onClick={handleLogout}>
+                <LogOut size={24} className="nav-icon" />
+                <span>Logout</span>
+              </button>
+            ) : (
+              <NavItem icon={LogIn} label="Login" to="/login" />
+            )}
+          </div>
+        </nav>
+      </div>
+    </>
   );
 };
 
@@ -322,37 +357,39 @@ const Post = ({ post }) => {
 
 
 const DcgramHomepage = () => {
-    // Story data
-    const stories = [
-        { avatar: '../images/a1.jpg', username: '_Batman_' },
-        { avatar: '../images/a2.jpg', username: '_Superman_' },
-        { avatar: '../images/a3.jpg', username: 'Wonder_Woman' },
-        { avatar: '../images/a4.jpg', username: '_Flash_' },
-        { avatar: '../images/a5.jpg', username: '_Aquaman_' },
-        { avatar: '../images/a6.jpg', username: '_Joker_' },
-        { avatar: '../images/a7.jpg', username: 'Harley_Quinn' },
-    ];
+  // Story data
+  const stories = [
+      { avatar: '../images/a1.jpg', username: '_Batman_' },
+      { avatar: '../images/a2.jpg', username: '_Superman_' },
+      { avatar: '../images/a3.jpg', username: 'Wonder_Woman' },
+      { avatar: '../images/a4.jpg', username: '_Flash_' },
+      { avatar: '../images/a5.jpg', username: '_Aquaman_' },
+      { avatar: '../images/a6.jpg', username: '_Joker_' },
+      { avatar: '../images/a7.jpg', username: 'Harley_Quinn' },
+  ];
 
-    return (<div><NavBar />
-        <div className="dcgram-homepage">
-            <div className="stories-container">
-                {stories.map((story, index) => (
-                    <StoryItem 
-                        key={index} 
-                        avatar={story.avatar} 
-                        username={story.username} 
-                    />
-                ))}
-            </div>
+  return (
+      <div>
+          <NavBar />
+          <div className="dcgram-homepage">
+              <div className="stories-container">
+                  {stories.map((story, index) => (
+                      <StoryItem 
+                          key={index} 
+                          avatar={story.avatar} 
+                          username={story.username} 
+                      />
+                  ))}
+              </div>
 
-            <div className="posts-container">
-                {postData.map(post => (
-                    <Post key={post.id} post={post} />
-                ))}
-            </div>
-        </div>
-        </div>
-    );
+              <div className="posts-container">
+                  {postData.map(post => (
+                      <Post key={post.id} post={post} />
+                  ))}
+              </div>
+          </div>
+      </div>
+  );
 };
 
 export default DcgramHomepage;

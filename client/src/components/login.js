@@ -20,7 +20,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', formData);
+      const response = await axios.post('https://instaclone-8585.onrender.com/login', formData);
       
       const token = response.data.token;
       const decoded = jwtDecode(token);
