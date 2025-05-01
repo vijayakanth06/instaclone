@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+Instagram Clone - DCGRAM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![DCGRAM Home Feed](https://github.com/vijayakanth06/instaclone/readme_images/home.png)
 
-## Available Scripts
+DCGRAM is an Instagram clone built with React for the frontend and Node.js with MongoDB for the backend. This project replicates core Instagram features including user authentication, profile management.
 
-In the project directory, you can run:
+Features
+User authentication (Signup/Login)
 
-### `npm start`
+Profile editing (username, email, mobile)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Password change functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Responsive UI similar to Instagram
 
-### `npm test`
+Technologies Used
+Frontend: React.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Backend: Node.js, Express.js
 
-### `npm run build`
+Database: MongoDB
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Other: React Router, Axios
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Installation
+Prerequisites
+Node.js (v14 or higher)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+MongoDB Atlas account or local MongoDB installation
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Setup Instructions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the repository
+bash
+git clone https://github.com/vijayakanth06/instaclone.git
+cd instaclone
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Set up the backend
+bash
+cd server
+npm install
 
-## Learn More
+Set up the frontend
+bash
+cd ../client
+npm install
+Environment Variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a .env file in the server folder with the following content:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+PORT=5000
+Run the application
 
-### Code Splitting
+In separate terminal windows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For backend:
+cd server
+node server.js
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For frontend:
+cd client
+npm start
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Available Scripts
+In both client and server directories:
 
-### Advanced Configuration
+npm install
+Installs all required dependencies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm start (client)
+Runs the app in development mode on http://localhost:3000.
 
-### Deployment
+node server.js (server)
+Starts the backend server on http://localhost:5000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Project Structure
+dcgram-instagram-clone/
+├── client/               # Frontend React application
+│   ├── public/           # Static files
+│   ├── src/              # React components and pages
+│   └── package.json      # Frontend dependencies
+└── server/               # Backend Node.js application
+    ├── models/           # MongoDB model       
+    ├── .env              # Environment variables
+    └── package.json      # Backend dependencies
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Screenshots
+
+
+![DCGRAM Login Screen](https://github.com/vijayakanth06/instaclone/readme_images/login.png)
+![DCGRAM signin Screen](https://github.com/vijayakanth06/instaclone/readme_images/signin.png)
+![DCGRAM profile Screen](https://github.com/vijayakanth06/instaclone/readme_images/profile.png)
+
+Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
