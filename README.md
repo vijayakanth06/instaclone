@@ -1,6 +1,6 @@
 Instagram Clone - DCGRAM
 
-![DCGRAM Home Feed](hhttps://github.com/vijayakanth06/instaclone/blob/master/readme_images/home.png)
+![DCGRAM Home Feed](https://github.com/vijayakanth06/instaclone/blob/master/readme_images/home.png)
 
 DCGRAM is an Instagram clone built with React for the frontend and Node.js with MongoDB for the backend. This project replicates core Instagram features including user authentication, profile management.
 
