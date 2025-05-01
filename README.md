@@ -1,6 +1,6 @@
 Instagram Clone - DCGRAM
 
-![DCGRAM Home Feed](https://github.com/vijayakanth06/instaclone/readme_images/home.png)
+![DCGRAM Home Feed](hhttps://github.com/vijayakanth06/instaclone/blob/master/readme_images/home.png)
 
 DCGRAM is an Instagram clone built with React for the frontend and Node.js with MongoDB for the backend. This project replicates core Instagram features including user authentication, profile management.
 
@@ -79,24 +79,10 @@ Runs the app in development mode on http://localhost:3000.
 node server.js (server)
 Starts the backend server on http://localhost:5000.
 
-Project Structure
-dcgram-instagram-clone/
-├── client/               # Frontend React application
-│   ├── public/           # Static files
-│   ├── src/              # React components and pages
-│   └── package.json      # Frontend dependencies
-└── server/               # Backend Node.js application
-    ├── models/           # MongoDB model       
-    ├── .env              # Environment variables
-    └── package.json      # Backend dependencies
-
-
 Screenshots
-
-
-![DCGRAM Login Screen](https://github.com/vijayakanth06/instaclone/readme_images/login.png)
-![DCGRAM signin Screen](https://github.com/vijayakanth06/instaclone/readme_images/signin.png)
-![DCGRAM profile Screen](https://github.com/vijayakanth06/instaclone/readme_images/profile.png)
+![DCGRAM Login Screen](https://github.com/vijayakanth06/instaclone/blob/master/readme_images/login.png)
+![DCGRAM signin Screen](https://github.com/vijayakanth06/instaclone/blob/master/readme_images/signin.png)
+![DCGRAM profile Screen](https://github.com/vijayakanth06/instaclone/blob/master/readme_images/profile.png)
 
 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
