@@ -1,82 +1,67 @@
-Instagram Clone - DCGRAM
+#Instagram Clone - DCGRAM
 
 ![DCGRAM Home Feed](https://github.com/vijayakanth06/instaclone/blob/master/readme_images/home.png)
 
 DCGRAM is an Instagram clone built with React for the frontend and Node.js with MongoDB for the backend. This project replicates core Instagram features including user authentication, profile management.
 
-Features
-User authentication (Signup/Login)
+##Features
+    1.User authentication (Signup/Login)
+    2.Profile editing (username, email, mobile)
+    3.Password change functionality
+    4.Responsive UI similar to Instagram
 
-Profile editing (username, email, mobile)
+##Technologies Used
+    1.Frontend: React.js
+    2.Backend: Node.js, Express.js
+    3.Database: MongoDB
+    4.Other: React Router, Axios
 
-Password change functionality
-
-Responsive UI similar to Instagram
-
-Technologies Used
-Frontend: React.js
-
-Backend: Node.js, Express.js
-
-Database: MongoDB
-
-Other: React Router, Axios
-
-Installation
-Prerequisites
-Node.js (v14 or higher)
-
-MongoDB Atlas account or local MongoDB installation
+#Installation
+##Prerequisites
+    1.Node.js (v14 or higher)
+    2.MongoDB Atlas account or local MongoDB installation
 
 
-Setup Instructions
+#Setup Instructions
+##Clone the repository
+    git clone https://github.com/vijayakanth06/instaclone.git
+    cd instaclone
 
-Clone the repository
-bash
-git clone https://github.com/vijayakanth06/instaclone.git
-cd instaclone
+##Set up the backend
+    cd server
+    npm install
 
-
-Set up the backend
-bash
-cd server
-npm install
-
-Set up the frontend
-bash
-cd ../client
-npm install
-Environment Variables
-
-Create a .env file in the server folder with the following content:
-
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-PORT=5000
-Run the application
-
-In separate terminal windows:
-
-For backend:
-cd server
-node server.js
+##Set up the frontend
+    cd ../client
+    npm install
 
 
-For frontend:
-cd client
-npm start
+#Environment Variables
+##Create a .env file in the server folder with the following content:
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret_key
+    PORT=5000
 
+##Run the application
+#In separate terminal windows:
 
-Available Scripts
-In both client and server directories:
+##For backend:
+    cd server
+    node server.js
 
-npm install
-Installs all required dependencies.
+##For frontend:
+    cd client
+    npm start
 
-npm start (client)
+##Available Scripts
+#In both client and server directories:
+    npm install
+
+#Install all required dependencies.
+    npm start (client)
+
 Runs the app in development mode on http://localhost:3000.
-
-node server.js (server)
+    node server.js (server)
 Starts the backend server on http://localhost:5000.
 
 Screenshots
