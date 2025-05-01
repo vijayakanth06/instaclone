@@ -167,7 +167,7 @@ const NavBar = () => {
         
         <nav className="instagram-nav">
           <div className="nav-logo">
-            <img src="./images/instagram-logo.png" width="150px" alt="Logo" />
+            <img src="./images/instagram-logo.png" width="150px" alt="Logo"/>
           </div>
 
           <div className="nav-item">

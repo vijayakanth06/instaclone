@@ -111,6 +111,12 @@ const ProfilePage = () => {
   return (
     <div className="ig-profile">
       <div className="ig-profile__header">
+        <button 
+          className="ig-profile__home-btn" 
+          onClick={() => navigate('/')}
+        >
+          Home
+        </button>
         <h1 className="ig-profile__title">Edit Profile</h1>
       </div>
 

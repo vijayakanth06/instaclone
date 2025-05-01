@@ -49,7 +49,7 @@ const Login = () => {
           <input type="password" id="password" name="password" placeholder="Enter your Password" required onChange={handleChange} />
 
           <div className="logininwrap">
-            <button type="submit" className='sigbutton'>Login</button>
+            <button type="submit" className='logbutton'>Login</button>
           </div>
         </form>
         <p id="logp">Not registered? <a id="loga" href="/signup">Create an account</a></p>
